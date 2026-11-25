@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emily Oliveira | Nail Designer</title>
+    <meta name="description" content="Esmaltação, alongamento e nail art com Emily Oliveira. Veja os serviços e reserve seu horário online com sinal via Pix." />
+    <meta property="og:site_name" name="siteName" content="Emily Oliveira Nail Designer" />
+    <meta property="og:title" content="Emily Oliveira | Nail Designer" />
+    <meta property="og:description" name="siteDescription" content="Descubra os serviços de manicure e nail art de Emily Oliveira e reserve seu horário online com Pix." />
+    <meta name="theme-color" content="#fdfaf7" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/home.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#inicio" aria-label="Emily Oliveira Nail Designer — início">
+          <svg aria-hidden="true"><use href="/icons.svg#brand" /></svg>
+          <span><strong>Emily Oliveira</strong><small>NAIL DESIGNER</small></span>
+        </a>
+        <button class="menu-toggle icon-button" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu"><svg aria-hidden="true"><use href="/icons.svg#menu" /></svg></button>
+        <nav class="nav" id="main-nav" aria-label="Navegação principal">
+          <a href="#inicio" aria-current="location">Início</a><a href="#servicos">Serviços</a><a href="#galeria">Galeria</a><a href="#contato">Contato</a>
+        </nav>
+        <a class="button primary header-cta" href="#agendar"><svg aria-hidden="true"><use href="/icons.svg#calendar" /></svg> Agendar horário</a>
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="shell hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> ESTÚDIO DE MANICURE & NAIL ART</p>
+            <h1 id="hero-title">Arte em cada<br /><em>detalhe.</em></h1>
+            <p class="hero-description">Cuidado, delicadeza e personalidade para suas unhas. Escolha seu serviço e reserve um horário só seu.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#agendar"><svg aria-hidden="true"><use href="/icons.svg#calendar" /></svg> Agendar meu horário <svg class="button-arrow" aria-hidden="true"><use href="/icons.svg#arrow" /></svg></a>
+              <a class="button secondary" href="#servicos">Ver serviços</a>
+            </div>
+          </div>
+          <figure class="hero-visual">
+            <picture>
+              <source media="(max-width: 600px)" srcset="/.netlify/images?url=/img/hero.webp&w=740&fm=webp" />
+              <img src="/.netlify/images?url=/img/hero.webp&w=1280&fm=webp" alt="Unhas em gel rosa translúcido com anéis dourados sobre cetim rosado" width="1280" height="960" fetchpriority="high" />
+            </picture>
+            <svg class="hero-star" aria-hidden="true"><use href="/icons.svg#star" /></svg>
+            <figcaption><svg aria-hidden="true"><use href="/icons.svg#sparkles" /></svg> Beleza feita à mão</figcaption>
+          </figure>
+        </div>
+      </section>
+      <div class="studio-strip">
+        <div class="shell studio-details" aria-label="Informações de atendimento">
+          <div><span class="stamp"><svg aria-hidden="true"><use href="/icons.svg#calendar" /></svg></span><p><strong>Todos os dias</strong><small>Das 07h às 23h</small></p></div>
+          <div><span class="stamp"><svg aria-hidden="true"><use href="/icons.svg#clock" /></svg></span><p><strong>Sessões de 1h30</strong><small>Tempo dedicado a você</small></p></div>
+          <div><span class="stamp"><svg aria-hidden="true"><use href="/icons.svg#shield" /></svg></span><p><strong>Reserva segura</strong><small>Sinal de 50% via Pix</small></p></div>
+        </div>
+      </div>
+      <section class="section shell" id="servicos" aria-labelledby="services-title">
+        <div class="section-intro centered">
+          <p class="eyebrow"><span></span> O MENU DO ESTÚDIO <span></span></p>
+          <h2 id="services-title">Serviços &amp; <em>valores</em></h2>
+          <p>Do essencial à nail art, escolha o cuidado que combina com você.</p>
+        </div>
+        <div class="service-grid" id="service-list"></div>
+      </section>
+      <section class="section gallery-section" id="galeria" aria-labelledby="gallery-title">
+        <div class="shell">
+          <div class="section-intro gallery-heading">
+            <div><p class="eyebrow"><span></span> PARA SE INSPIRAR</p><h2 id="gallery-title">Galeria de <em>unhas</em></h2></div>
+            <p>Uma seleção ilustrativa de cores, formatos e acabamentos para seu próximo atendimento.</p>
+          </div>
+          <div class="gallery-grid" id="gallery-list"></div>
+          <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+            <form method="dialog"><button class="icon-button" aria-label="Fechar foto"><svg aria-hidden="true"><use href="/icons.svg#close" /></svg></button></form>
+            <img alt="" /><p id="lightbox-title"></p>
+          </dialog>
+        </div>
+      </section>
+      <section class="section shell booking-section" id="agendar" aria-labelledby="booking-title">
+        <div class="booking-intro section-intro">
+          <p class="eyebrow"><span></span> RESERVA ONLINE</p>
+          <h2 id="booking-title">Reserve seu <em>horário</em></h2>
+          <p>Escolha o serviço, encontre um horário e confirme a reserva com um sinal de 50% pelo Pix do Mercado Pago.</p>
+          <div class="booking-note"><span class="stamp"><svg aria-hidden="true"><use href="/icons.svg#shield" /></svg></span><p><strong>Pagamento seguro</strong><small>Seu horário é confirmado assim que o pagamento é aprovado.</small></p></div>
+          <a class="text-link" href="https://wa.me/5571988553209" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="/icons.svg#whatsapp" /></svg> Precisa de ajuda? Fale no WhatsApp</a>
+        </div>
+        <div class="booking-card">
+          <ol class="steps" aria-label="Etapas do agendamento"><li aria-current="step"><b>1</b> Horário</li><li><b>2</b> Seus dados</li><li><b>3</b> Pix</li></ol>
+          <form id="booking-form">
+            <div id="booking-time">
+              <h3>Escolha seu serviço e horário</h3>
+              <label class="field">Serviço <select id="booking-service" required><option value="">Selecione um serviço</option></select></label>
+              <label class="check-field"><input type="checkbox" id="booking-extra" /> Adicionar acessório (+ R$ 2,00)</label>
+              <label class="field">Data <input id="booking-date" type="date" required /></label>
+              <div id="slot-panel"><p class="field-label">Horários disponíveis <small>· horário de Salvador</small></p><div id="slots" class="slots" aria-label="Horários" aria-live="polite"></div></div>
+              <button id="next-step" type="button" class="button primary full">Continuar <svg aria-hidden="true"><use href="/icons.svg#arrow" /></svg></button>
+            </div>
+            <div id="booking-client" hidden>
+              <h3>Seus dados</h3><p class="muted booking-summary" id="booking-summary"></p>
+              <label class="field">Nome completo <input name="name" required minlength="3" maxlength="100" autocomplete="name" placeholder="Seu nome" /></label>
+              <label class="field">E-mail <input name="email" type="email" required maxlength="180" autocomplete="email" placeholder="voce@exemplo.com" /></label>
+              <label class="field">WhatsApp <input name="phone" type="tel" required maxlength="20" autocomplete="tel" placeholder="(00) 00000-0000" /></label>
+              <p class="privacy-copy">Usamos seus dados para registrar o atendimento e processar a reserva. Precisa atualizar seus dados? Fale com o estúdio pelo WhatsApp.</p>
+              <div class="booking-buttons"><button id="back-step" class="button secondary" type="button">Voltar</button><button id="generate-pix" class="button primary" type="submit">Gerar Pix</button></div>
+            </div>
+          </form>
+          <div id="booking-payment" aria-live="polite" hidden></div>
+          <p id="booking-message" class="form-message" role="status" hidden></p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="contato">
+      <div class="shell footer-main">
+        <div><a class="brand" href="#inicio"><svg aria-hidden="true"><use href="/icons.svg#brand" /></svg><span><strong>Emily Oliveira</strong><small>NAIL DESIGNER</small></span></a><p>Manicure, alongamento e nail art.</p></div>
+        <div><h2>Atendimento</h2><p>Todos os dias, das 07h às 23h.</p><a class="text-link" href="https://wa.me/5571988553209" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="/icons.svg#whatsapp" /></svg> (71) 98855-3209</a></div>
+        <a class="button secondary" href="#agendar">Agendar horário <svg aria-hidden="true"><use href="/icons.svg#arrow" /></svg></a>
+      </div>
+      <div class="shell footer-bottom"><small>© Emily Oliveira Nail Designer</small><a href="/admin">Área administrativa</a></div>
+    </footer>
+    <a class="whatsapp-float" href="https://wa.me/5571988553209" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"><svg aria-hidden="true"><use href="/icons.svg#whatsapp" /></svg></a>
+  </body>
+</html>

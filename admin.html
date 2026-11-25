@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Área administrativa | Emily Oliveira Nail Designer</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/admin.js"></script>
+  </head>
+  <body>
+    <header class="site-header"><div class="shell admin-header"><a class="brand" href="/"><svg aria-hidden="true"><use href="/icons.svg#brand" /></svg><span><strong>Emily Oliveira</strong><small>NAIL DESIGNER</small></span></a><a class="button secondary" href="/">Voltar ao site</a></div></header>
+    <main class="section shell admin-main">
+      <section class="booking-card admin-login" id="admin-login">
+        <h1>Área administrativa</h1>
+        <p class="muted" id="login-description">Acesso reservado à equipe do estúdio.</p>
+        <form id="login-form" hidden>
+          <label class="field">E-mail <input type="email" name="email" required autocomplete="username" /></label>
+          <label class="field">Senha <input type="password" name="password" required autocomplete="current-password" /></label>
+          <button class="button primary full" type="submit">Entrar</button>
+          <button class="text-link" type="button" id="forgot-password">Esqueci minha senha</button>
+        </form>
+        <form id="setup-form" hidden>
+          <label class="field">Nova senha <input type="password" name="password" minlength="8" required autocomplete="new-password" /></label>
+          <button class="button primary full" type="submit">Salvar senha</button>
+        </form>
+        <p id="login-message" class="form-message" role="status" hidden></p>
+      </section>
+      <section class="booking-card" id="admin-dashboard" hidden>
+        <p class="eyebrow"><span></span> PAINEL DO ESTÚDIO</p>
+        <h1>Gestão de atendimentos</h1>
+        <nav class="admin-tabs" aria-label="Seções do painel"><button id="agenda-tab" class="button secondary" type="button" aria-pressed="true">Agenda</button><button id="clientes-tab" class="button secondary" type="button" aria-pressed="false">Clientes</button><button id="admin-logout" class="button secondary" type="button">Sair</button></nav>
+        <p id="admin-payment-status" class="form-message" hidden>O Pix online não está configurado neste ambiente.</p>
+        <p id="admin-message" class="form-message" role="status" hidden></p>
+        <div id="agenda-panel">
+          <h3>Agenda do dia</h3>
+          <form class="admin-controls" id="block-form">
+            <label class="field">Data <input id="admin-day" type="date" required /></label>
+            <label class="field">Horário a bloquear <select id="block-time" required><option value="">Selecione</option></select></label>
+            <button class="button primary" type="submit" id="block-button" disabled>Bloquear horário</button>
+          </form>
+          <div id="agenda-list" class="admin-list" aria-live="polite"></div>
+        </div>
+        <div id="clientes-panel" hidden>
+          <h3>Clientes cadastrados</h3>
+          <div id="client-list" class="admin-list" aria-live="polite"></div>
+          <div class="booking-buttons" id="client-pages" hidden><button type="button" class="button secondary" id="client-previous">Anterior</button><button type="button" class="button secondary" id="client-next">Próxima</button></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

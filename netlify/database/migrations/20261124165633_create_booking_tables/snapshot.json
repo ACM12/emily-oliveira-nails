@@ -1,0 +1,470 @@
+{
+  "version": "8",
+  "dialect": "postgres",
+  "id": "8e9bcbd9-1445-4b4c-bc96-d71717e7a9af",
+  "prevIds": [
+    "00000000-0000-0000-0000-000000000000"
+  ],
+  "ddl": [
+    {
+      "values": [
+        "awaiting",
+        "confirmed",
+        "cancelled",
+        "blocked",
+        "review"
+      ],
+      "name": "booking_status",
+      "entityType": "enums",
+      "schema": "public"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "booking_limits",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "bookings",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "customers",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "key",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "booking_limits"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "count",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "booking_limits"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "expires_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "booking_limits"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "starts_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "booking_status",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "customer_id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "service_name",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "total_cents",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "deposit_cents",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "expires_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "payment_id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "pix_code",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "pix_image",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "next_check_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "customers"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "name",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "customers"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "email",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "customers"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "phone",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "customers"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "customers"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "starts_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": "status IN ('awaiting', 'confirmed', 'blocked')",
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "bookings_one_active_per_slot",
+      "entityType": "indexes",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "starts_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "bookings_starts_at_idx",
+      "entityType": "indexes",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "next_check_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": "status = 'awaiting'",
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "bookings_payment_queue_idx",
+      "entityType": "indexes",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "email",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "phone",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "customers_contact_unique",
+      "entityType": "indexes",
+      "schema": "public",
+      "table": "customers"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "customer_id"
+      ],
+      "schemaTo": "public",
+      "tableTo": "customers",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "bookings_customer_id_customers_id_fkey",
+      "entityType": "fks",
+      "schema": "public",
+      "table": "bookings"
+    },
+    {
+      "columns": [
+        "key"
+      ],
+      "nameExplicit": false,
+      "name": "booking_limits_pkey",
+      "schema": "public",
+      "table": "booking_limits",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "bookings_pkey",
+      "schema": "public",
+      "table": "bookings",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "customers_pkey",
+      "schema": "public",
+      "table": "customers",
+      "entityType": "pks"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "payment_id"
+      ],
+      "nullsNotDistinct": false,
+      "name": "bookings_payment_id_key",
+      "schema": "public",
+      "table": "bookings",
+      "entityType": "uniques"
+    },
+    {
+      "value": "\"status\" = 'blocked' OR (\"deposit_cents\" > 0 AND \"deposit_cents\" * 2 = \"total_cents\")",
+      "name": "bookings_amount_valid",
+      "entityType": "checks",
+      "schema": "public",
+      "table": "bookings"
+    }
+  ],
+  "renames": []
+}
